@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sürükle Bırak Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="oyun-alani">
+
+    <div style="text-align:center; margin-top:20px;">
+    <button onclick="window.location.reload()" style="padding:10px 20px; font-size:18px; cursor:pointer; background:orange; border:none; border-radius:5px; color:white;">
+        Tekrar Oyna ↻
+    </button>
+</div>
+    
+    <div class="dolap">
+        <div class="raf" id="raf-h" ondrop="birak(event, 'H')" ondragover="suruklemeIzni(event)" data-harf="1"></div>
+        
+        <div class="raf" id="raf-r" ondrop="birak(event, 'R')" ondragover="suruklemeIzni(event)" data-harf="2"></div>
+        
+        <div class="raf" id="raf-k" ondrop="birak(event, 'K')" ondragover="suruklemeIzni(event)" data-harf="3"></div>
+    </div>
+
+    <div class="nesneler-alani">
+        <h3>Nesneler </h3>
+        
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n1" data-ses="H">
+            <img src="resimler/hali.png" alt="Havlu">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n2" data-ses="H">
+            <img src="resimler/havuc.png" alt="Havuç">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n3" data-ses="H">
+            <img src="resimler/horoz.png" alt="Hoparlör">
+        </div>
+
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n4" data-ses="R">
+            <img src="resimler/radyo.png" alt="Raptiye">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n5" data-ses="R">
+            <img src="resimler/roket.png" alt="Reçel">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n6" data-ses="R">
+            <img src="resimler/robot.png" alt="Rende">
+        </div>
+
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n7" data-ses="K">
+            <img src="resimler/kalem.png" alt="Karpuz">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n8" data-ses="K">
+            <img src="resimler/kitap.png" alt="Kek">
+        </div>
+        <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n9" data-ses="K">
+            <img src="resimler/kedi.png" alt="Kedi">
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
