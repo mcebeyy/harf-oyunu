@@ -2,62 +2,97 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Sürükle Bırak Oyunu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ses Farkındalığı ve Harf Eşleştirme Oyunu | Okul Öncesi & Özel Eğitim</title>
+    <meta name="description" content="Çocuklar için ücretsiz, etkileşimli harf ve ses farkındalığı oyunu. H, R ve K sesiyle başlayan nesneleri raflara yerleştirme etkinliği. Tablet ve akıllı tahta uyumlu.">
+    <meta name="keywords" content="özel eğitim, harf oyunu, ses farkındalığı, sürükle bırak oyunu, eğitici materyal, okul öncesi etkinlik, okuma yazma hazırlık">
+    <meta name="author" content="Eğitim Materyali">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="oyun-alani">
-
-    <div style="text-align:center; margin-top:20px;">
-    <button onclick="window.location.reload()" style="padding:10px 20px; font-size:18px; cursor:pointer; background:orange; border:none; border-radius:5px; color:white;">
-        Tekrar Oyna ↻
-    </button>
+<div style="text-align: center; margin-bottom: 20px; color: #333;">
+    <h1 style="font-size: 24px; margin-bottom: 5px;">Nesneleri Doğru Rafa Yerleştir</h1>
+    <p style="font-size: 16px;">Aşağıdaki nesneleri, başladıkları sese göre (1, 2 veya 3 numaralı) doğru rafa sürükleyip bırakınız.</p>
 </div>
+
+<div class="oyun-alani">
     
     <div class="dolap">
-        <div class="raf" id="raf-h" ondrop="birak(event, 'H')" ondragover="suruklemeIzni(event)" data-harf="1"></div>
+        <div class="raf" id="raf-h" 
+             ondrop="birak(event, 'H')" 
+             ondragover="suruklemeIzni(event)" 
+             ondragenter="iceriGirdi(event)" 
+             ondragleave="disariCikti(event)" 
+             data-harf="1"></div>
         
-        <div class="raf" id="raf-r" ondrop="birak(event, 'R')" ondragover="suruklemeIzni(event)" data-harf="2"></div>
+        <div class="raf" id="raf-r" 
+             ondrop="birak(event, 'R')" 
+             ondragover="suruklemeIzni(event)" 
+             ondragenter="iceriGirdi(event)" 
+             ondragleave="disariCikti(event)" 
+             data-harf="2"></div>
         
-        <div class="raf" id="raf-k" ondrop="birak(event, 'K')" ondragover="suruklemeIzni(event)" data-harf="3"></div>
+        <div class="raf" id="raf-k" 
+             ondrop="birak(event, 'K')" 
+             ondragover="suruklemeIzni(event)" 
+             ondragenter="iceriGirdi(event)" 
+             ondragleave="disariCikti(event)" 
+             data-harf="3"></div>
     </div>
 
     <div class="nesneler-alani">
-        <h3>Nesneler </h3>
-        
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n1" data-ses="H">
-            <img src="resimler/hali.png" alt="Havlu">
+            <img src="resimler/hali.png" alt="Halı">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n2" data-ses="H">
             <img src="resimler/havuc.png" alt="Havuç">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n3" data-ses="H">
-            <img src="resimler/horoz.png" alt="Hoparlör">
+            <img src="resimler/horoz.png" alt="Horoz">
+            
         </div>
 
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n4" data-ses="R">
-            <img src="resimler/radyo.png" alt="Raptiye">
+            <img src="resimler/radyo.png" alt="Radyo">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n5" data-ses="R">
-            <img src="resimler/roket.png" alt="Reçel">
+            <img src="resimler/roket.png" alt="Roket">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n6" data-ses="R">
-            <img src="resimler/robot.png" alt="Rende">
+            <img src="resimler/robot.png" alt="Robot">
+            
         </div>
 
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n7" data-ses="K">
-            <img src="resimler/kalem.png" alt="Karpuz">
+            <img src="resimler/kalem.png" alt="Kalem">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n8" data-ses="K">
-            <img src="resimler/kitap.png" alt="Kek">
+            <img src="resimler/kitap.png" alt="Kitap">
+            
         </div>
         <div class="nesne" draggable="true" ondragstart="surukle(event)" id="n9" data-ses="K">
             <img src="resimler/kedi.png" alt="Kedi">
+            
         </div>
     </div>
 
 </div>
+
+<div style="text-align:center; margin-top:20px;">
+    <button onclick="window.location.reload()" style="padding:10px 20px; font-size:18px; cursor:pointer; background:#ff9800; border:none; border-radius:5px; color:white; font-weight:bold;">
+        Tekrar Oyna ↻
+    </button>
+</div>
+
+<audio id="dogruSesi" src="ding.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
